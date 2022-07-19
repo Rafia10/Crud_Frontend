@@ -1,0 +1,70 @@
+<div
+  class="md:container md:mx-auto px-20 border border-transparent shadow-sm text-sm font-medium rounded-md"
+>
+  <div class="col-md-12">
+    <h2 class="text-3xl font-bold center">Create Employee Profile</h2>
+    <div class="form-group">
+      <input
+        type="text"
+        [(ngModel)]="employeeDetails.name"
+        class="form-group"
+        placeholder="Name"
+      />
+
+      <div class="error" *ngIf="!employeeDetails.name">* Field is required</div>
+    </div>
+    <br />
+    <div class="form-group">
+      <input
+        type="text"
+        [(ngModel)]="employeeDetails.email"
+        class="form-control"
+        placeholder="Email"
+      />
+      <div class="error" *ngIf="!employeeDetails.email">
+        * Field is required
+      </div>
+    </div>
+
+    <br />
+
+    <div class="form-group">
+      <input
+        type="text"
+        [(ngModel)]="employeeDetails.position"
+        class="form-control"
+        placeholder="Position"
+      />
+      <div class="error" *ngIf="!employeeDetails.position">
+        * Field is required
+      </div>
+    </div>
+    <br />
+    <div class="form-group">
+      <input
+        type="text"
+        [(ngModel)]="employeeDetails.office"
+        class="form-control"
+        placeholder="Office"
+      />
+      <div class="error" *ngIf="!employeeDetails.office">
+        * Field is required
+      </div>
+    </div>
+    <br />
+
+    <div class="form-group">
+      <button
+        class="py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-blue-400"
+        (click)="addEmployee(employeeDetails)"
+        [disabled]="
+          !employeeDetails.name ||
+          !employeeDetails.office ||
+          !employeeDetails.position
+        "
+      >
+        Create Employee
+      </button>
+    </div>
+  </div>
+</div>

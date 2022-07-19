@@ -1,0 +1,59 @@
+<div style="width: 500px; margin: auto">
+  <div *ngIf="employeeData" class="edit-form">
+    <h4 class="text-3xl font-bold">Employee</h4>
+    <div>
+      <div class="form-group">
+        <label>Name</label>
+        <input
+          type="text"
+          class="form-control"
+          id="name"
+          name="name"
+          [(ngModel)]="employeeData.name"
+          [value]="employeeData.name"
+        />
+      </div>
+      <div class="form-group">
+        <label>Email</label>
+        <input
+          type="text"
+          class="form-control"
+          id="email"
+          name="email"
+          [(ngModel)]="employeeData.email"
+          [value]="employeeData.email"
+        />
+      </div>
+      <div class="form-group">
+        <label>Position</label>
+        <input
+          type="text"
+          class="form-control"
+          id="Position"
+          [(ngModel)]="employeeData.position"
+          [value]="employeeData.position"
+          name="Position"
+        />
+      </div>
+      <div class="form-group">
+        <label>Salary</label>
+        <input
+          type="text"
+          class="form-control"
+          id="salary"
+          [(ngModel)]="employeeData.salary"
+          [value]="employeeData.salary"
+          name="salary"
+        />
+      </div>
+    </div>
+
+    <button
+      class="py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-orange-400"
+      type="button"
+      (click)="updateEmployee()"
+    >
+      Update
+    </button>
+  </div>
+</div>

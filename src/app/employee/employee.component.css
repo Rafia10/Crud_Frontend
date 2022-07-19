@@ -1,0 +1,13 @@
+#toast{
+  background-color: antiquewhite !important;
+  color: red;
+}
+.error{
+  color: palevioletred;
+}
+
+.heading{
+  font-weight: bold;
+  font-size: 30px;
+  text-align: center;
+}

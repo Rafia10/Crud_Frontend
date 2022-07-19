@@ -1,0 +1,43 @@
+<table class="table-auto">
+  <thead>
+    <tr>
+      <th>Emp ID</th>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Position</th>
+      <th>Office</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tr *ngFor="let empl of _employeeService.employees">
+    <td>{{ empl._id }}</td>
+    <td>{{ empl.name }}</td>
+    <td>{{ empl.email }}</td>
+    <td>{{ empl.position }}</td>
+    <td>{{ empl.office }}</td>
+    <td>
+      <button
+        type="button"
+        class="py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-blue-400"
+        routerLink="/list/edit/{{ empl._id }}"
+      >
+        Edit
+      </button>
+      {{ "" }}
+      <button
+        type="button"
+        class="py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-red-400"
+        (click)="deleteEmployee(empl._id)"
+      >
+        Delete
+      </button>
+    </td>
+  </tr>
+  <button
+    type="button"
+    class="py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-red-400"
+    (click)="deleteAll()"
+  >
+    Delete All
+  </button>
+</table>
